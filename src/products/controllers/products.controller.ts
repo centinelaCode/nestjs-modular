@@ -9,11 +9,11 @@ import {
   Delete,
   HttpStatus,
   HttpCode,
-  Res,
+  // Res,
   // ParseIntPipe,
 } from '@nestjs/common';
 
-import { Response } from 'express';
+// import { Response } from 'express';
 import { ParseIntPipe } from '../../common/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from './../dtos/products.dtos';
 
@@ -29,6 +29,7 @@ export class ProductsController {
     @Query('offset') offset = 0,
     @Query('brand') brand: string,
   ) {
+    console.log(limit, offset, brand);
     // return {
     //   message: `products limit=> ${limit} offset=> ${offset} brand=> ${brand}`,
     // };
