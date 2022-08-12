@@ -16,8 +16,9 @@ import {
 // import { Response } from 'express';
 import { ParseIntPipe } from '../../common/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from './../dtos/products.dtos';
-import { ApiTags } from '@nestjs/swagger';
-/* ApiProperty permite clasificar los endpoits en la documentacion */
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+/* ApiTags permite clasificar los endpoits en la documentacion */
+/* ApiOperation permite cagregar una descripcion a cada ed-point */
 
 import { ProductsService } from './../services/products.service';
 
@@ -27,6 +28,7 @@ export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
+  @ApiOperation({ summary: 'List of products' })
   getProducts(
     @Query('limit') limit = 100,
     @Query('offset') offset = 0,
