@@ -16,9 +16,11 @@ import {
 // import { Response } from 'express';
 import { ParseIntPipe } from '../../common/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from './../dtos/products.dtos';
+import { ApiTags } from '@nestjs/swagger';
 
 import { ProductsService } from './../services/products.service';
 
+@ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
