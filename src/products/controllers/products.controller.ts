@@ -17,6 +17,7 @@ import {
 import { ParseIntPipe } from '../../common/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from './../dtos/products.dtos';
 import { ApiTags } from '@nestjs/swagger';
+/* ApiProperty permite clasificar los endpoits en la documentacion */
 
 import { ProductsService } from './../services/products.service';
 
